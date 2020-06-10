@@ -1,0 +1,6 @@
+#Dont Track
+
+TSC_Desafio/build/*
+TSC_Desafio/nbproject/*
+TSC_Desafio/build.xml
+TSC_Desafio/manifest.mf
