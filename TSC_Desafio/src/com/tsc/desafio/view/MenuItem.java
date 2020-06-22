@@ -7,13 +7,14 @@ package com.tsc.desafio.view;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
+import javax.swing.Icon;
 
 /**
  *
  * @author vegad
  */
 public class MenuItem extends javax.swing.JPanel {
-    
+
     public ArrayList<MenuItem> getSubMenu(){
         return subMenu;
     }
@@ -23,6 +24,20 @@ public class MenuItem extends javax.swing.JPanel {
      */
     private final ArrayList<MenuItem> subMenu = new ArrayList<>();
     
+    public MenuItem(Icon icon, String menuName, MenuItem... subMenu) {
+        initComponents();
+        theIcon.setIcon(icon);
+        LabelName.setText(menuName);
+        this.setSize(new Dimension(Integer.MAX_VALUE,45));
+        this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
+        this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
+        for (int i = 0; i < subMenu.length; i++) {
+            this.subMenu.add(subMenu[i]);
+            subMenu[i].setVisible(false);
+            
+        }
+    }
+    
     public MenuItem(String menuName, MenuItem... subMenu) {
         initComponents();
         LabelName.setText(menuName);
@@ -31,6 +46,7 @@ public class MenuItem extends javax.swing.JPanel {
         this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
         for (int i = 0; i < subMenu.length; i++) {
             this.subMenu.add(subMenu[i]);
+            subMenu[i].setVisible(false);
             
         }
     }
@@ -46,6 +62,7 @@ public class MenuItem extends javax.swing.JPanel {
 
         LabelName = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        theIcon = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(34, 40, 49));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -59,25 +76,32 @@ public class MenuItem extends javax.swing.JPanel {
         LabelName.setText("Item Name");
         LabelName.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        jSeparator1.setBackground(new java.awt.Color(37, 43, 53));
-        jSeparator1.setForeground(new java.awt.Color(112, 112, 112));
+        jSeparator1.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addComponent(jSeparator1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(theIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                        .addGap(12, 12, 12))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(theIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -132,5 +156,6 @@ public class MenuItem extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelName;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel theIcon;
     // End of variables declaration//GEN-END:variables
 }

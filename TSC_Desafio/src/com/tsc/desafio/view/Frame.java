@@ -5,6 +5,9 @@
  */
 package com.tsc.desafio.view;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -22,24 +25,41 @@ public class Frame extends javax.swing.JFrame {
     }
 
     private void execute(){
-        MenuItem menuDominio = new MenuItem("Dominio utilizado");
-        MenuItem menuMalla = new MenuItem("Malla generada");
-        MenuItem menuTConect = new MenuItem("Tabla de conectividades");
-        MenuItem menuMEF = new MenuItem("Metodo de elementos finitos");
-        MenuItem menuEnsamblaje = new MenuItem("Ensamblaje");
-        MenuItem menuContorno = new MenuItem("Condiciones de contorno");
-        Menu(menuDominio);
-        Menu(menuMalla);
-        Menu(menuTConect);
-        Menu(menuMEF);
-        Menu(menuEnsamblaje);
-        Menu(menuContorno);
+        //Iconos
+        ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/cube.png"));
+        ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/conditions.png"));
+        ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/connect.png"));
+        ImageIcon iconAssambly = new ImageIcon(getClass().getResource("../resources/assambly.png"));
+        ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/mef.png"));
+        ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/malla.png"));
+        //Crear submenu
+        MenuItem paso1 = new MenuItem("Paso 1");
+        MenuItem paso2 = new MenuItem("Paso 2");
+        MenuItem paso3 = new MenuItem("Paso 3");
+        MenuItem paso4 = new MenuItem("Paso 4");
+        MenuItem paso5 = new MenuItem("Paso 5");
+        MenuItem paso6 = new MenuItem("Paso 6");
+        //Menus - Agregando submenus
+        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado");
+        MenuItem menuMalla = new MenuItem(iconMalla,"Malla generada");
+        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades");
+        MenuItem menuMEF = new MenuItem(iconMef,"Metodo de elementos finitos", paso1, paso2, paso3, paso4,paso5,paso6);
+        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje");
+        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno");
+        
+        
+        Menu(menuDominio,menuMalla,menuTConect,menuMEF,menuEnsamblaje,menuContorno);
     }
     
     private void Menu(MenuItem... menu){
         for (int i = 0; i < menu.length; i++) {
             menus.add(menu[i]);
+            ArrayList<MenuItem>subMenu=menu[i].getSubMenu();
+            for (MenuItem m:subMenu) {
+                Menu(m);
+            }
         }
+        menus.revalidate();
     }
     /**
      * This method is called from within the constructor to initialize the form.
