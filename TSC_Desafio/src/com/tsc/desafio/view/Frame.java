@@ -5,7 +5,11 @@
  */
 package com.tsc.desafio.view;
 
-import com.tsc.desafio.panel.Main;
+import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.Contorno;
+import com.tsc.desafio.panel.Malla;
+import com.tsc.desafio.panel.Paso1;
+import com.tsc.desafio.panel.Table;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -31,39 +35,81 @@ public class Frame extends javax.swing.JFrame {
     }
 
     private void execute() {
-        //Inicio
-        ContentPanel.add(new Main());
-        ContentPanel.repaint();
-        ContentPanel.revalidate();
         //Iconos
-        ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/cube.png"));
-        ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/conditions.png"));
-        ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/connect.png"));
-        ImageIcon iconAssambly = new ImageIcon(getClass().getResource("../resources/assambly.png"));
-        ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/mef.png"));
-        ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/malla.png"));
+        ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/iconmenu/cube.png"));
+        ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/iconmenu/conditions.png"));
+        ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/iconmenu/connect.png"));
+        ImageIcon iconAssambly = new ImageIcon(getClass().getResource("../resources/iconmenu/assambly.png"));
+        ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/iconmenu/mef.png"));
+        ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/iconmenu/malla.png"));
         //Crear submenu
-        MenuItem paso1 = new MenuItem("Paso 1", new ActionListener() {
+        MenuItem paso1 = new MenuItem("Localizacion", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                ContentPanel.add(new Main());
+                ContentPanel.removeAll();
+                ContentPanel.add(new Paso1());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso2 = new MenuItem("Paso 2", null);
-        MenuItem paso3 = new MenuItem("Paso 3", null);
-        MenuItem paso4 = new MenuItem("Paso 4", null);
-        MenuItem paso5 = new MenuItem("Paso 5", null);
-        MenuItem paso6 = new MenuItem("Paso 6", null);
+        MenuItem paso2 = new MenuItem("Interpolacion", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Contorno());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        MenuItem paso3 = new MenuItem("Aproximacion del modelo", null);
+        MenuItem paso4 = new MenuItem("Residuos ponderados", null);
+        MenuItem paso5 = new MenuItem("Metodo de Galerkin", null);
+        MenuItem paso6 = new MenuItem("Integracion por partes", null);
         //Menus - Agregando submenus        
-        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", null);
-        MenuItem menuMalla = new MenuItem(iconMalla, "Malla generada", null);
-        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades", null);
+        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefDominio());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        MenuItem menuMalla = new MenuItem(iconMalla, "Malla generada", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Malla());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Table());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
         MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", null, paso1, paso2, paso3, paso4, paso5, paso6);
         MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
-        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", null);
+        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Contorno());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
 
         Menu(menuDominio, menuMalla, menuTConect, menuMEF, menuEnsamblaje, menuContorno);
     }
@@ -94,6 +140,7 @@ public class Frame extends javax.swing.JFrame {
         menus = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -121,6 +168,11 @@ public class Frame extends javax.swing.JFrame {
 
         ContentPanel.setBackground(new java.awt.Color(29, 32, 41));
         ContentPanel.setLayout(new java.awt.BorderLayout());
+
+        jLabel3.setFont(new java.awt.Font("Niagara Engraved", 0, 400)); // NOI18N
+        jLabel3.setText("      MEF");
+        ContentPanel.add(jLabel3, java.awt.BorderLayout.CENTER);
+
         jPanel1.add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 1060, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,6 +233,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JScrollPane ScrollMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables
