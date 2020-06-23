@@ -5,10 +5,16 @@
  */
 package com.tsc.desafio.view;
 
+import com.tsc.desafio.panel.Main;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -24,7 +30,11 @@ public class Frame extends javax.swing.JFrame {
         execute();
     }
 
-    private void execute(){
+    private void execute() {
+        //Inicio
+        ContentPanel.add(new Main());
+        ContentPanel.repaint();
+        ContentPanel.revalidate();
         //Iconos
         ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/cube.png"));
         ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/conditions.png"));
@@ -33,34 +43,42 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/mef.png"));
         ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/malla.png"));
         //Crear submenu
-        MenuItem paso1 = new MenuItem("Paso 1");
-        MenuItem paso2 = new MenuItem("Paso 2");
-        MenuItem paso3 = new MenuItem("Paso 3");
-        MenuItem paso4 = new MenuItem("Paso 4");
-        MenuItem paso5 = new MenuItem("Paso 5");
-        MenuItem paso6 = new MenuItem("Paso 6");
-        //Menus - Agregando submenus
-        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado");
-        MenuItem menuMalla = new MenuItem(iconMalla,"Malla generada");
-        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades");
-        MenuItem menuMEF = new MenuItem(iconMef,"Metodo de elementos finitos", paso1, paso2, paso3, paso4,paso5,paso6);
-        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje");
-        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno");
-        
-        
-        Menu(menuDominio,menuMalla,menuTConect,menuMEF,menuEnsamblaje,menuContorno);
+        MenuItem paso1 = new MenuItem("Paso 1", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.add(new Main());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        MenuItem paso2 = new MenuItem("Paso 2", null);
+        MenuItem paso3 = new MenuItem("Paso 3", null);
+        MenuItem paso4 = new MenuItem("Paso 4", null);
+        MenuItem paso5 = new MenuItem("Paso 5", null);
+        MenuItem paso6 = new MenuItem("Paso 6", null);
+        //Menus - Agregando submenus        
+        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", null);
+        MenuItem menuMalla = new MenuItem(iconMalla, "Malla generada", null);
+        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades", null);
+        MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", null, paso1, paso2, paso3, paso4, paso5, paso6);
+        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
+        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", null);
+
+        Menu(menuDominio, menuMalla, menuTConect, menuMEF, menuEnsamblaje, menuContorno);
     }
-    
-    private void Menu(MenuItem... menu){
+
+    private void Menu(MenuItem... menu) {
         for (int i = 0; i < menu.length; i++) {
             menus.add(menu[i]);
-            ArrayList<MenuItem>subMenu=menu[i].getSubMenu();
-            for (MenuItem m:subMenu) {
+            ArrayList<MenuItem> subMenu = menu[i].getSubMenu();
+            for (MenuItem m : subMenu) {
                 Menu(m);
             }
         }
         menus.revalidate();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,6 +92,8 @@ public class Frame extends javax.swing.JFrame {
         MenuPanel = new javax.swing.JPanel();
         ScrollMenu = new javax.swing.JScrollPane();
         menus = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ContentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -92,7 +112,16 @@ public class Frame extends javax.swing.JFrame {
 
         MenuPanel.add(ScrollMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 280, 660));
 
+        jLabel1.setFont(new java.awt.Font("Niagara Engraved", 0, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(181, 181, 181));
+        jLabel1.setText("MEF");
+        MenuPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
+
         jPanel1.add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 720));
+
+        ContentPanel.setBackground(new java.awt.Color(29, 32, 41));
+        ContentPanel.setLayout(new java.awt.BorderLayout());
+        jPanel1.add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 1060, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +141,6 @@ public class Frame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
     /**
      * @param args the command line arguments
      */
@@ -149,9 +177,12 @@ public class Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ContentPanel;
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JScrollPane ScrollMenu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables
+
 }

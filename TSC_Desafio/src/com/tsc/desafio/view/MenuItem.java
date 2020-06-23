@@ -6,6 +6,7 @@
 package com.tsc.desafio.view;
 
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.Icon;
 
@@ -23,11 +24,17 @@ public class MenuItem extends javax.swing.JPanel {
      * Creates new form MenuItem
      */
     private final ArrayList<MenuItem> subMenu = new ArrayList<>();
+    private ActionListener actionListener;
     
-    public MenuItem(Icon icon, String menuName, MenuItem... subMenu) {
+    public MenuItem(Icon icon, String menuName, ActionListener actionListener, MenuItem... subMenu) {
         initComponents();
         theIcon.setIcon(icon);
         LabelName.setText(menuName);
+        
+        if(actionListener!=null){
+            this.actionListener=actionListener;
+        }
+        
         this.setSize(new Dimension(Integer.MAX_VALUE,45));
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
         this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
@@ -38,9 +45,14 @@ public class MenuItem extends javax.swing.JPanel {
         }
     }
     
-    public MenuItem(String menuName, MenuItem... subMenu) {
+    public MenuItem(String menuName, ActionListener actionListener,MenuItem... subMenu) {
         initComponents();
         LabelName.setText(menuName);
+        
+        if(actionListener!=null){
+            this.actionListener=actionListener;
+        }
+        
         this.setSize(new Dimension(Integer.MAX_VALUE,45));
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
         this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
@@ -85,11 +97,11 @@ public class MenuItem extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addGap(18, 18, 18)
                 .addComponent(theIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,6 +126,9 @@ public class MenuItem extends javax.swing.JPanel {
         }else{
             mostrar();
             mostrar=true;
+        }
+        if(actionListener!=null){
+            actionListener.actionPerformed(null);
         }
     }//GEN-LAST:event_formMousePressed
 
