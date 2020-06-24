@@ -7,7 +7,6 @@ package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.AproxModel;
 import com.tsc.desafio.panel.DefDominio;
-import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.Interpolacion;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
@@ -75,7 +74,16 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso4 = new MenuItem("Residuos ponderados", null);
+        MenuItem paso4 = new MenuItem("Residuos ponderados", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Contorno());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
         MenuItem paso5 = new MenuItem("Metodo de Galerkin", null);
         MenuItem paso6 = new MenuItem("Integracion por partes", null);
         //Menus - Agregando submenus        

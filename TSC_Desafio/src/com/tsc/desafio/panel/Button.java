@@ -7,9 +7,11 @@ package com.tsc.desafio.panel;
 
 import com.tsc.desafio.view.*;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -27,26 +29,7 @@ public class Button extends javax.swing.JPanel {
     private final ArrayList<Button> subMenu = new ArrayList<>();
     private ActionListener actionListener;
     
-    public Button(Icon icon, String menuName, ActionListener actionListener, Button... subMenu) {
-        initComponents();
-        theIcon.setIcon(icon);
-        LabelName.setText(menuName);
-        
-        if(actionListener!=null){
-            this.actionListener=actionListener;
-        }
-        
-        this.setSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
-        for (int i = 0; i < subMenu.length; i++) {
-            this.subMenu.add(subMenu[i]);
-            subMenu[i].setVisible(false);
-            
-        }
-    }
-    
-    public Button(String menuName, ActionListener actionListener,Button... subMenu) {
+    public Button(String menuName, ActionListener actionListener, Button... subMenu) {
         initComponents();
         LabelName.setText(menuName);
         
@@ -74,49 +57,37 @@ public class Button extends javax.swing.JPanel {
     private void initComponents() {
 
         LabelName = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        theIcon = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(34, 40, 49));
+        setBackground(new java.awt.Color(255, 192, 69));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        setPreferredSize(new java.awt.Dimension(200, 54));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 formMousePressed(evt);
             }
         });
 
+        LabelName.setBackground(new java.awt.Color(21, 21, 24));
         LabelName.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 13)); // NOI18N
-        LabelName.setForeground(new java.awt.Color(236, 236, 236));
+        LabelName.setForeground(new java.awt.Color(21, 21, 24));
         LabelName.setText("Item Name");
         LabelName.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        jSeparator1.setBackground(new java.awt.Color(51, 51, 51));
-        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(theIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(25, Short.MAX_VALUE)
+                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(theIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     
@@ -172,7 +143,5 @@ public class Button extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelName;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel theIcon;
     // End of variables declaration//GEN-END:variables
 }
