@@ -9,6 +9,9 @@ import com.tsc.desafio.panel.Butt;
 import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.DefDominio;
 import com.tsc.desafio.panel.IPP;
+import com.tsc.desafio.panel.IPP1;
+import com.tsc.desafio.panel.IPP2;
+import com.tsc.desafio.panel.IPP3;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
@@ -100,21 +103,30 @@ public class IntegracioPP extends javax.swing.JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new IPP1());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Butt button3 = new Butt("3", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new IPP2());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Butt button4 = new Butt("4", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new IPP3());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Sig(buttonSig,button2,button3,button4);
