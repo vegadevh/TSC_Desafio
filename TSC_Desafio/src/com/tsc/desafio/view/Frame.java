@@ -94,7 +94,16 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso6 = new MenuItem("Integracion por partes", null);
+        MenuItem paso6 = new MenuItem("Integracion por partes", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new IntegracioPP());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
         //Menus - Agregando submenus        
         MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", new ActionListener() {
 
