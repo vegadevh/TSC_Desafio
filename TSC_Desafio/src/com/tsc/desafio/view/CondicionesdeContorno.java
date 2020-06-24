@@ -6,6 +6,10 @@
 package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.Butt;
+import com.tsc.desafio.panel.Contorno;
+import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.Malla;
+import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,12 +18,12 @@ import java.util.ArrayList;
  *
  * @author vegad
  */
-public class Contorno extends javax.swing.JPanel {
+public class CondicionesdeContorno extends javax.swing.JPanel {
 
     /**
      * Creates new form Main
      */
-    public Contorno() {
+    public CondicionesdeContorno() {
         initComponents();
         execute();
     }
@@ -39,51 +43,35 @@ public class Contorno extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(29, 32, 41));
         setPreferredSize(new java.awt.Dimension(1060, 720));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout PanelBodyLayout = new javax.swing.GroupLayout(PanelBody);
-        PanelBody.setLayout(PanelBodyLayout);
-        PanelBodyLayout.setHorizontalGroup(
-            PanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        PanelBodyLayout.setVerticalGroup(
-            PanelBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
-        );
+        PanelBody.setBackground(new java.awt.Color(29, 32, 41));
+        PanelBody.setLayout(new javax.swing.BoxLayout(PanelBody, javax.swing.BoxLayout.LINE_AXIS));
+        add(PanelBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -4, 1072, 630));
 
-        buttons.setLayout(new javax.swing.BoxLayout(buttons, javax.swing.BoxLayout.Y_AXIS));
+        PanelButtons.setBackground(new java.awt.Color(29, 32, 41));
+
+        buttons.setBackground(new java.awt.Color(29, 32, 41));
+        buttons.setLayout(new javax.swing.BoxLayout(buttons, javax.swing.BoxLayout.X_AXIS));
 
         javax.swing.GroupLayout PanelButtonsLayout = new javax.swing.GroupLayout(PanelButtons);
         PanelButtons.setLayout(PanelButtonsLayout);
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(790, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                .addContainerGap(630, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelButtonsLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(21, 21, 21)
                 .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelBody, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(PanelButtons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(PanelBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PanelButtons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 623, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -94,16 +82,52 @@ public class Contorno extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void execute() {
-        Butt buttonSig = new Butt("Siguiente", new ActionListener() {
+        PanelBody.add(new Contorno());
+        PanelBody.repaint();
+        PanelBody.revalidate();
+        Butt buttonSig = new Butt("1", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new Paso1());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
-        Sig(buttonSig);
+        Butt button2 = new Butt("2", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new DefDominio());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Butt button3 = new Butt("3", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new Malla());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Butt button4 = new Butt("4", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new Paso1());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Sig(buttonSig,button2,button3,button4);
     }
-    
+
     private void Sig(Butt... button) {
         for (int i = 0; i < button.length; i++) {
             buttons.add(button[i]);

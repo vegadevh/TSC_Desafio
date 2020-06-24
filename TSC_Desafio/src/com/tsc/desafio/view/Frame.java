@@ -79,12 +79,21 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new Contorno());
+                ContentPanel.add(new ResiduosPonderados());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso5 = new MenuItem("Metodo de Galerkin", null);
+        MenuItem paso5 = new MenuItem("Metodo de Galerkin", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new MetGalerkin());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
         MenuItem paso6 = new MenuItem("Integracion por partes", null);
         //Menus - Agregando submenus        
         MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", new ActionListener() {
@@ -124,7 +133,7 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new Contorno());
+                ContentPanel.add(new CondicionesdeContorno());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
