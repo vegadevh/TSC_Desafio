@@ -17,19 +17,19 @@ import javax.swing.ImageIcon;
  *
  * @author vegad
  */
-public class Button extends javax.swing.JPanel {
+public class Butt extends javax.swing.JPanel {
 
-    public ArrayList<Button> getSubMenu(){
+    public ArrayList<Butt> getSubMenu(){
         return subMenu;
     }
 
     /**
      * Creates new form MenuItem
      */
-    private final ArrayList<Button> subMenu = new ArrayList<>();
+    private final ArrayList<Butt> subMenu = new ArrayList<>();
     private ActionListener actionListener;
     
-    public Button(String menuName, ActionListener actionListener, Button... subMenu) {
+    public Butt(String menuName, ActionListener actionListener, Butt... subMenu) {
         initComponents();
         LabelName.setText(menuName);
         
@@ -59,7 +59,7 @@ public class Button extends javax.swing.JPanel {
         LabelName = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 192, 69));
-        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(200, 54));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -78,16 +78,16 @@ public class Button extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(LabelName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelName)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     
