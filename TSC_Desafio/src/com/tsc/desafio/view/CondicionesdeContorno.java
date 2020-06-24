@@ -90,7 +90,7 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new Paso1());
+                PanelBody.add(new Contorno());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -99,30 +99,21 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DefDominio());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Butt button3 = new Butt("3", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new Malla());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Butt button4 = new Butt("4", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new Paso1());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Sig(buttonSig,button2,button3,button4);
