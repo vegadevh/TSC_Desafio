@@ -43,6 +43,7 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon iconAssambly = new ImageIcon(getClass().getResource("../resources/iconmenu/assambly.png"));
         ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/iconmenu/mef.png"));
         ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/iconmenu/malla.png"));
+        ImageIcon iconmc = new ImageIcon(getClass().getResource("../resources/iconmenu/mc.png"));
         //Crear submenu
         MenuItem paso1 = new MenuItem("Localizacion", new ActionListener() {
 
@@ -136,6 +137,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", null, paso1, paso2, paso3, paso4, paso5, paso6);
+        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", null);
         MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
         MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
 
@@ -148,7 +150,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        Menu(menuDominio, menuMalla, menuTConect, menuMEF, menuEnsamblaje, menuContorno);
+        Menu(menuDominio, menuMalla, menuTConect, menuMEF, menuDefinicion,menuEnsamblaje, menuContorno);
     }
 
     private void Menu(MenuItem... menu) {

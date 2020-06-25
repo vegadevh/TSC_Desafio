@@ -8,10 +8,6 @@ package com.tsc.desafio.view;
 import com.tsc.desafio.panel.Butt;
 import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.DefDominio;
-import com.tsc.desafio.panel.IPP;
-import com.tsc.desafio.panel.IPP1;
-import com.tsc.desafio.panel.IPP2;
-import com.tsc.desafio.panel.IPP3;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
@@ -22,12 +18,12 @@ import java.util.ArrayList;
  *
  * @author vegad
  */
-public class IntegracioPP extends javax.swing.JPanel {
+public class Definicion extends javax.swing.JPanel {
 
     /**
      * Creates new form Main
      */
-    public IntegracioPP() {
+    public Definicion() {
         initComponents();
         execute();
     }
@@ -63,15 +59,15 @@ public class IntegracioPP extends javax.swing.JPanel {
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(782, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(630, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelButtonsLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -86,7 +82,7 @@ public class IntegracioPP extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void execute() {
-        PanelBody.add(new IPP());
+        PanelBody.add(new Contorno());
         PanelBody.repaint();
         PanelBody.revalidate();
         Butt buttonSig = new Butt("1", new ActionListener() {
@@ -94,7 +90,7 @@ public class IntegracioPP extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new IPP());
+                PanelBody.add(new Contorno());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -103,30 +99,21 @@ public class IntegracioPP extends javax.swing.JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new IPP1());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Butt button3 = new Butt("3", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new IPP2());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Butt button4 = new Butt("4", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new IPP3());
-                PanelBody.repaint();
-                PanelBody.revalidate();
+                
             }
         });
         Sig(buttonSig,button2,button3,button4);
