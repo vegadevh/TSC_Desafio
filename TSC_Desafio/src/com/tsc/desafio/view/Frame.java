@@ -7,19 +7,15 @@ package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.AproxModel;
 import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.Ensamblaje;
 import com.tsc.desafio.panel.Interpolacion;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import com.tsc.desafio.panel.Table;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 /**
  *
@@ -215,7 +211,16 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         },componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
-        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
+        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Assambly());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
         MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
 
             @Override
