@@ -155,7 +155,7 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new DefinicionQ());
+                ContentPanel.add(new DefinicionK());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
@@ -166,7 +166,7 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new DefinicionQ());
+                ContentPanel.add(new DefinicionL());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
@@ -188,7 +188,7 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new DefinicionQ());
+                ContentPanel.add(new Definicionf());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
@@ -199,7 +199,7 @@ public class Frame extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ContentPanel.removeAll();
-                ContentPanel.add(new DefinicionQ());
+                ContentPanel.add(new Definiciong());
                 ContentPanel.repaint();
                 ContentPanel.revalidate();
             }
