@@ -8,6 +8,9 @@ package com.tsc.desafio.view;
 import com.tsc.desafio.panel.Butt;
 import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.Galerkin;
+import com.tsc.desafio.panel.Galerkin1;
+import com.tsc.desafio.panel.Galerkin2;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
@@ -18,12 +21,12 @@ import java.util.ArrayList;
  *
  * @author vegad
  */
-public class Definicion extends javax.swing.JPanel {
+public class DefComponentes extends javax.swing.JPanel {
 
     /**
      * Creates new form Main
      */
-    public Definicion() {
+    public DefComponentes() {
         initComponents();
         execute();
     }
@@ -59,8 +62,8 @@ public class Definicion extends javax.swing.JPanel {
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(630, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(824, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
@@ -82,7 +85,7 @@ public class Definicion extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void execute() {
-        PanelBody.add(new Contorno());
+        PanelBody.add(new Galerkin());
         PanelBody.repaint();
         PanelBody.revalidate();
         Butt buttonSig = new Butt("1", new ActionListener() {
@@ -90,7 +93,7 @@ public class Definicion extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new Contorno());
+                PanelBody.add(new Galerkin());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -99,24 +102,23 @@ public class Definicion extends javax.swing.JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new Galerkin1());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Butt button3 = new Butt("3", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new Galerkin2());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
-        Butt button4 = new Butt("4", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-            }
-        });
-        Sig(buttonSig,button2,button3,button4);
+        Sig(buttonSig, button2, button3);
     }
 
     private void Sig(Butt... button) {

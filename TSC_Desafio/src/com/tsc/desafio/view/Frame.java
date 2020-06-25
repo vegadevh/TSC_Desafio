@@ -137,7 +137,75 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", null, paso1, paso2, paso3, paso4, paso5, paso6);
-        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", null);
+        
+        //CONDICIONES
+        MenuItem componentesQ = new MenuItem("Matriz Q", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionQ());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem componentesK = new MenuItem("Matriz K", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionQ());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem componentesL = new MenuItem("Matriz L", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionQ());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem componentesR = new MenuItem("Matriz R", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionR());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem componentesf = new MenuItem("Matriz f", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionQ());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem componentesg = new MenuItem("Matriz g", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new DefinicionQ());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        });
+        
+        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", null,componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
         MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
         MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
 
