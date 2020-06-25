@@ -12,6 +12,10 @@ import com.tsc.desafio.panel.DEFQ;
 import com.tsc.desafio.panel.DEFQ1;
 import com.tsc.desafio.panel.DEFQ2;
 import com.tsc.desafio.panel.DEFQ3;
+import com.tsc.desafio.panel.DEFR;
+import com.tsc.desafio.panel.DEFR1;
+import com.tsc.desafio.panel.DEFR2;
+import com.tsc.desafio.panel.DEFR3;
 import com.tsc.desafio.panel.DefDominio;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
@@ -64,8 +68,8 @@ public class DefinicionR extends javax.swing.JPanel {
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(709, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(789, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
@@ -87,7 +91,7 @@ public class DefinicionR extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void execute() {
-        PanelBody.add(new DEF());
+        PanelBody.add(new DEFR());
         PanelBody.repaint();
         PanelBody.revalidate();
         Butt buttonSig = new Butt("1", new ActionListener() {
@@ -95,7 +99,7 @@ public class DefinicionR extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new DEF());
+                PanelBody.add(new DEFR());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -105,7 +109,7 @@ public class DefinicionR extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new DEFQ());
+                PanelBody.add(new DEFR1());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -115,7 +119,7 @@ public class DefinicionR extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new DEFQ1());
+                PanelBody.add(new DEFR2());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -125,22 +129,12 @@ public class DefinicionR extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new DEFQ2());
+                PanelBody.add(new DEFR3());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
         });
-        Butt button5 = new Butt("5", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DEFQ3());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Sig(buttonSig,button2,button3,button4, button5);
+        Sig(buttonSig,button2,button3,button4);
     }
 
     private void Sig(Butt... button) {

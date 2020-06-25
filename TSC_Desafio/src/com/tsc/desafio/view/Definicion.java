@@ -23,12 +23,12 @@ import java.util.ArrayList;
  *
  * @author vegad
  */
-public class DefinicionQ extends javax.swing.JPanel {
+public class Definicion extends javax.swing.JPanel {
 
     /**
      * Creates new form Main
      */
-    public DefinicionQ() {
+    public Definicion() {
         initComponents();
         execute();
     }
@@ -44,7 +44,6 @@ public class DefinicionQ extends javax.swing.JPanel {
 
         PanelBody = new javax.swing.JPanel();
         PanelButtons = new javax.swing.JPanel();
-        buttons = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(29, 32, 41));
         setPreferredSize(new java.awt.Dimension(1060, 720));
@@ -56,24 +55,15 @@ public class DefinicionQ extends javax.swing.JPanel {
 
         PanelButtons.setBackground(new java.awt.Color(29, 32, 41));
 
-        buttons.setBackground(new java.awt.Color(29, 32, 41));
-        buttons.setLayout(new javax.swing.BoxLayout(buttons, javax.swing.BoxLayout.X_AXIS));
-
         javax.swing.GroupLayout PanelButtonsLayout = new javax.swing.GroupLayout(PanelButtons);
         PanelButtons.setLayout(PanelButtonsLayout);
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(788, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+            .addGap(0, 1072, Short.MAX_VALUE)
         );
         PanelButtonsLayout.setVerticalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelButtonsLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         add(PanelButtons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 623, -1, -1));
@@ -83,64 +73,13 @@ public class DefinicionQ extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelBody;
     private javax.swing.JPanel PanelButtons;
-    private javax.swing.JPanel buttons;
     // End of variables declaration//GEN-END:variables
 
     private void execute() {
-        PanelBody.add(new DEFQ());
+        PanelBody.add(new DEF());
         PanelBody.repaint();
         PanelBody.revalidate();
-        Butt buttonSig = new Butt("1", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DEFQ());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button2 = new Butt("2", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DEFQ1());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button3 = new Butt("3", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DEFQ2());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button4 = new Butt("4", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new DEFQ3());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Sig(buttonSig,button2,button3,button4);
     }
 
-    private void Sig(Butt... button) {
-        for (int i = 0; i < button.length; i++) {
-            buttons.add(button[i]);
-            ArrayList<Butt> butts = button[i].getSubMenu();
-            for (Butt m : butts) {
-                Sig(m);
-            }
-        }
-        buttons.revalidate();
-    }
+    
 }

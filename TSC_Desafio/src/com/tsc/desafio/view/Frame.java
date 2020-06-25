@@ -205,7 +205,16 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", null,componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
+        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ContentPanel.removeAll();
+                ContentPanel.add(new Definicion());
+                ContentPanel.repaint();
+                ContentPanel.revalidate();
+            }
+        },componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
         MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", null);
         MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
 
