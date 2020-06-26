@@ -28,13 +28,13 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
-        //setIcon();
+        setIcon();
         execute();
     }
 
     private void execute() {
         //Iconos
-        /*
+        
         ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/iconmenu/cube.png"));
         ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/iconmenu/conditions.png"));
         ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/iconmenu/connect.png"));
@@ -42,7 +42,7 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/iconmenu/mef.png"));
         ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/iconmenu/malla.png"));
         ImageIcon iconmc = new ImageIcon(getClass().getResource("../resources/iconmenu/mc.png"));
-        */
+        
         //Crear submenu
         MenuItem paso1 = new MenuItem("Localizacion", new ActionListener() {
 
@@ -105,7 +105,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         //Menus - Agregando submenus        
-        MenuItem menuDominio = new MenuItem(/*iconCube,*/ "Dominio utilizado", new ActionListener() {
+        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -115,7 +115,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuMalla = new MenuItem(/*iconMalla,*/ "Malla generada", new ActionListener() {
+        MenuItem menuMalla = new MenuItem(iconMalla, "Malla generada", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -125,7 +125,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuTConect = new MenuItem(/*iconConnect,*/ "Tabla de conectividades", new ActionListener() {
+        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,7 +135,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuMEF = new MenuItem(/*iconMef,*/ "Metodo de elementos finitos", paso1, paso2, paso3, paso4, paso5, paso6);
+        MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", paso1, paso2, paso3, paso4, paso5, paso6);
         
         //CONDICIONES
         MenuItem componentesQ = new MenuItem("Matriz Q", new ActionListener() {
@@ -204,7 +204,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem menuDefinicion = new MenuItem(/*iconmc,*/ "Definicion de componentes", new ActionListener() {
+        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -214,7 +214,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         },componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
-        MenuItem menuEnsamblaje = new MenuItem(/*iconAssambly,*/ "Ensamblaje", new ActionListener() {
+        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -224,7 +224,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuContorno = new MenuItem(/*iconCondition,*/ "Condiciones de contorno", new ActionListener() {
+        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
