@@ -81,7 +81,7 @@ public class MenuItem extends javax.swing.JPanel {
             
         }
     }
-    /*
+    
     public MenuItem(String menuName, MenuItem... subMenu) {
         initComponents();
         LabelName.setText(menuName);
@@ -99,7 +99,7 @@ public class MenuItem extends javax.swing.JPanel {
             
         }
     }
-    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
