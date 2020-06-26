@@ -65,8 +65,8 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(630, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(768, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
@@ -106,7 +106,7 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new ElementsI());
+                PanelBody.add(new ApplyConditions1());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -116,7 +116,7 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new ElementsP());
+                PanelBody.add(new ApplyConditions2());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -126,42 +126,12 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new ApplyConditions());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button5 = new Butt("5", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new ApplyConditions1());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button6 = new Butt("6", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
-                PanelBody.add(new ApplyConditions2());
-                PanelBody.repaint();
-                PanelBody.revalidate();
-            }
-        });
-        Butt button7 = new Butt("7", new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelBody.removeAll();
                 PanelBody.add(new ApplyConditions3());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
         });
-        Sig(button1,button2,button3,button4, button5,button6, button7);
+        Sig(button1, button2,button3,button4);
     }
 
     private void Sig(Butt... button) {

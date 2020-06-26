@@ -5,9 +5,12 @@
  */
 package com.tsc.desafio.view;
 
+import com.tsc.desafio.panel.ApplyConditions;
 import com.tsc.desafio.panel.Butt;
 import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.ElementsI;
+import com.tsc.desafio.panel.ElementsP;
 import com.tsc.desafio.panel.Ensamblaje;
 import com.tsc.desafio.panel.Galerkin;
 import com.tsc.desafio.panel.Galerkin1;
@@ -63,8 +66,8 @@ public class Assambly extends javax.swing.JPanel {
         PanelButtonsLayout.setHorizontalGroup(
             PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelButtonsLayout.createSequentialGroup()
-                .addContainerGap(824, Short.MAX_VALUE)
-                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(767, Short.MAX_VALUE)
+                .addComponent(buttons, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
         PanelButtonsLayout.setVerticalGroup(
@@ -99,12 +102,13 @@ public class Assambly extends javax.swing.JPanel {
                 PanelBody.revalidate();
             }
         });
+        
         Butt button2 = new Butt("2", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new Galerkin1());
+                PanelBody.add(new ElementsI());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -114,12 +118,23 @@ public class Assambly extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new Galerkin2());
+                PanelBody.add(new ElementsP());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
         });
-        Sig(buttonSig, button2, button3);
+        Butt button4 = new Butt("4", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new ApplyConditions());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        
+        Sig(buttonSig, button2, button3,button4);
     }
 
     private void Sig(Butt... button) {
