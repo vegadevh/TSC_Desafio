@@ -12,6 +12,7 @@ import com.tsc.desafio.panel.Interpolacion;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import com.tsc.desafio.panel.Table;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
+        //setIcon();
         execute();
     }
 
@@ -342,10 +344,8 @@ public class Frame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Frame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Frame().setVisible(true);
         });
     }
 
@@ -358,5 +358,9 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables
-
+/*
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../resources/icon/icon.png")));
+    }
+*/
 }
