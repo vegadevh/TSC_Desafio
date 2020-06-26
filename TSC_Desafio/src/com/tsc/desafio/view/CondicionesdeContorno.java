@@ -5,9 +5,15 @@
  */
 package com.tsc.desafio.view;
 
+import com.tsc.desafio.panel.ApplyConditions;
+import com.tsc.desafio.panel.ApplyConditions1;
+import com.tsc.desafio.panel.ApplyConditions2;
+import com.tsc.desafio.panel.ApplyConditions3;
 import com.tsc.desafio.panel.Butt;
 import com.tsc.desafio.panel.Contorno;
 import com.tsc.desafio.panel.DefDominio;
+import com.tsc.desafio.panel.ElementsI;
+import com.tsc.desafio.panel.ElementsP;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
@@ -85,7 +91,7 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
         PanelBody.add(new Contorno());
         PanelBody.repaint();
         PanelBody.revalidate();
-        Butt buttonSig = new Butt("1", new ActionListener() {
+        Butt button1 = new Butt("1", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,24 +105,63 @@ public class CondicionesdeContorno extends javax.swing.JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new ElementsI());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Butt button3 = new Butt("3", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new ElementsP());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
         Butt button4 = new Butt("4", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                PanelBody.removeAll();
+                PanelBody.add(new ApplyConditions());
+                PanelBody.repaint();
+                PanelBody.revalidate();
             }
         });
-        Sig(buttonSig,button2,button3,button4);
+        Butt button5 = new Butt("5", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new ApplyConditions1());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Butt button6 = new Butt("6", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new ApplyConditions2());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Butt button7 = new Butt("7", new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelBody.removeAll();
+                PanelBody.add(new ApplyConditions3());
+                PanelBody.repaint();
+                PanelBody.revalidate();
+            }
+        });
+        Sig(button1,button2,button3,button4, button5,button6, button7);
     }
 
     private void Sig(Butt... button) {
