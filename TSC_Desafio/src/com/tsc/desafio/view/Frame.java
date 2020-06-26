@@ -7,12 +7,10 @@ package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.AproxModel;
 import com.tsc.desafio.panel.DefDominio;
-import com.tsc.desafio.panel.Ensamblaje;
 import com.tsc.desafio.panel.Interpolacion;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import com.tsc.desafio.panel.Table;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -134,7 +132,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", null, paso1, paso2, paso3, paso4, paso5, paso6);
+        MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", paso1, paso2, paso3, paso4, paso5, paso6);
         
         //CONDICIONES
         MenuItem componentesQ = new MenuItem("Matriz Q", new ActionListener() {
@@ -344,8 +342,11 @@ public class Frame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Frame().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Frame().setVisible(true);
+            }
         });
     }
 
