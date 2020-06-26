@@ -81,7 +81,25 @@ public class MenuItem extends javax.swing.JPanel {
             
         }
     }
-
+    /*
+    public MenuItem(String menuName, MenuItem... subMenu) {
+        initComponents();
+        LabelName.setText(menuName);
+        
+        if(actionListener!=null){
+            this.actionListener=actionListener;
+        }
+        
+        this.setSize(new Dimension(Integer.MAX_VALUE,45));
+        this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
+        this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
+        for (int i = 0; i < subMenu.length; i++) {
+            this.subMenu.add(subMenu[i]);
+            subMenu[i].setVisible(false);
+            
+        }
+    }
+    */
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

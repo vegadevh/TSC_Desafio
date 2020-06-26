@@ -11,6 +11,7 @@ import com.tsc.desafio.panel.Interpolacion;
 import com.tsc.desafio.panel.Malla;
 import com.tsc.desafio.panel.Paso1;
 import com.tsc.desafio.panel.Table;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -27,12 +28,13 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
-        //setIcon();
+        setIcon();
         execute();
     }
 
     private void execute() {
         //Iconos
+        
         ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/iconmenu/cube.png"));
         ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/iconmenu/conditions.png"));
         ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/iconmenu/connect.png"));
@@ -40,6 +42,7 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/iconmenu/mef.png"));
         ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/iconmenu/malla.png"));
         ImageIcon iconmc = new ImageIcon(getClass().getResource("../resources/iconmenu/mc.png"));
+        
         //Crear submenu
         MenuItem paso1 = new MenuItem("Localizacion", new ActionListener() {
 
@@ -264,7 +267,6 @@ public class Frame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(29, 32, 41));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -359,9 +361,9 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables
-/*
+
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../resources/icon/icon.png")));
     }
-*/
+
 }
