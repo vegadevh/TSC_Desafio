@@ -14,19 +14,19 @@ import javax.swing.Icon;
  *
  * @author vegad
  */
-public class MenuItem extends javax.swing.JPanel {
+public class MenuItem4 extends javax.swing.JPanel {
 
-    public ArrayList<MenuItem> getSubMenu(){
+    public ArrayList<MenuItem4> getSubMenu(){
         return subMenu;
     }
 
     /**
      * Creates new form MenuItem
      */
-    private final ArrayList<MenuItem> subMenu = new ArrayList<>();
+    private final ArrayList<MenuItem4> subMenu = new ArrayList<>();
     private ActionListener actionListener;
     
-    public MenuItem(Icon icon, String menuName, ActionListener actionListener, MenuItem... subMenu) {
+    public MenuItem4(Icon icon, String menuName, ActionListener actionListener, MenuItem4... subMenu) {
         initComponents();
         theIcon.setIcon(icon);
         LabelName.setText(menuName);
@@ -45,7 +45,7 @@ public class MenuItem extends javax.swing.JPanel {
         }
     }
     
-    public MenuItem(String menuName, ActionListener actionListener,MenuItem... subMenu) {
+    public MenuItem4(String menuName, ActionListener actionListener,MenuItem4... subMenu) {
         initComponents();
         LabelName.setText(menuName);
         
@@ -63,7 +63,7 @@ public class MenuItem extends javax.swing.JPanel {
         }
     }
     
-    public MenuItem(Icon icon, String menuName, MenuItem... subMenu) {
+    public MenuItem4(Icon icon, String menuName, MenuItem4... subMenu) {
         initComponents();
         theIcon.setIcon(icon);
         LabelName.setText(menuName);
@@ -111,7 +111,7 @@ public class MenuItem extends javax.swing.JPanel {
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        theIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tsc/desafio/resources/iconmenu/cube.png"))); // NOI18N
+        theIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tsc/desafio/resources/iconmenu/mc.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

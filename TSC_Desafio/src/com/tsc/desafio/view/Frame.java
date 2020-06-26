@@ -28,13 +28,12 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
-        setIcon();
         execute();
     }
 
     private void execute() {
         //Iconos
-        
+        /*
         ImageIcon iconCube = new ImageIcon(getClass().getResource("../resources/iconmenu/cube.png"));
         ImageIcon iconCondition = new ImageIcon(getClass().getResource("../resources/iconmenu/conditions.png"));
         ImageIcon iconConnect = new ImageIcon(getClass().getResource("../resources/iconmenu/connect.png"));
@@ -42,9 +41,9 @@ public class Frame extends javax.swing.JFrame {
         ImageIcon iconMef = new ImageIcon(getClass().getResource("../resources/iconmenu/mef.png"));
         ImageIcon iconMalla = new ImageIcon(getClass().getResource("../resources/iconmenu/malla.png"));
         ImageIcon iconmc = new ImageIcon(getClass().getResource("../resources/iconmenu/mc.png"));
-        
+        */
         //Crear submenu
-        MenuItem paso1 = new MenuItem("Localizacion", new ActionListener() {
+        MenuItem3 paso1 = new MenuItem3("Localizacion", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,7 +53,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso2 = new MenuItem("Interpolacion", new ActionListener() {
+        MenuItem3 paso2 = new MenuItem3("Interpolacion", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -64,7 +63,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso3 = new MenuItem("Aproximacion del modelo", new ActionListener() {
+        MenuItem3 paso3 = new MenuItem3("Aproximacion del modelo", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,7 +73,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso4 = new MenuItem("Residuos ponderados", new ActionListener() {
+        MenuItem3 paso4 = new MenuItem3("Residuos ponderados", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -84,7 +83,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso5 = new MenuItem("Metodo de Galerkin", new ActionListener() {
+        MenuItem3 paso5 = new MenuItem3("Metodo de Galerkin", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,7 +93,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem paso6 = new MenuItem("Integracion por partes", new ActionListener() {
+        MenuItem3 paso6 = new MenuItem3("Integracion por partes", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,7 +104,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         //Menus - Agregando submenus        
-        MenuItem menuDominio = new MenuItem(iconCube, "Dominio utilizado", new ActionListener() {
+        MenuItem menuDominio = new MenuItem(/*iconCube,*/ "Dominio utilizado", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -115,7 +114,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuMalla = new MenuItem(iconMalla, "Malla generada", new ActionListener() {
+        MenuItem1 menuMalla = new MenuItem1(/*iconMalla,*/ "Malla generada", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -125,7 +124,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuTConect = new MenuItem(iconConnect, "Tabla de conectividades", new ActionListener() {
+        MenuItem2 menuTConect = new MenuItem2(/*iconConnect,*/ "Tabla de conectividades", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -135,10 +134,10 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuMEF = new MenuItem(iconMef, "Metodo de elementos finitos", paso1, paso2, paso3, paso4, paso5, paso6);
+        MenuItem3 menuMEF = new MenuItem3(/*iconMef,*/ "Metodo de elementos finitos",null, paso1, paso2, paso3, paso4, paso5, paso6);
         
         //CONDICIONES
-        MenuItem componentesQ = new MenuItem("Matriz Q", new ActionListener() {
+        MenuItem4 componentesQ = new MenuItem4("Matriz Q", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -149,7 +148,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem componentesK = new MenuItem("Matriz K", new ActionListener() {
+        MenuItem4 componentesK = new MenuItem4("Matriz K", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -160,7 +159,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem componentesL = new MenuItem("Matriz L", new ActionListener() {
+        MenuItem4 componentesL = new MenuItem4("Matriz L", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -171,7 +170,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem componentesR = new MenuItem("Matriz R", new ActionListener() {
+        MenuItem4 componentesR = new MenuItem4("Matriz R", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -182,7 +181,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem componentesf = new MenuItem("Matriz f", new ActionListener() {
+        MenuItem4 componentesf = new MenuItem4("Matriz f", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -193,7 +192,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem componentesg = new MenuItem("Matriz g", new ActionListener() {
+        MenuItem4 componentesg = new MenuItem4("Matriz g", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,7 +203,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         
-        MenuItem menuDefinicion = new MenuItem(iconmc, "Definicion de componentes", new ActionListener() {
+        MenuItem4 menuDefinicion = new MenuItem4(/*iconmc,*/ "Definicion de componentes", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -214,7 +213,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         },componentesQ,componentesK, componentesL, componentesR,componentesf, componentesg);
-        MenuItem menuEnsamblaje = new MenuItem(iconAssambly, "Ensamblaje", new ActionListener() {
+        MenuItem5 menuEnsamblaje = new MenuItem5(/*iconAssambly,*/ "Ensamblaje", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -224,7 +223,7 @@ public class Frame extends javax.swing.JFrame {
                 ContentPanel.revalidate();
             }
         });
-        MenuItem menuContorno = new MenuItem(iconCondition, "Condiciones de contorno", new ActionListener() {
+        MenuItem6 menuContorno = new MenuItem6(/*iconCondition,*/ "Condiciones de contorno", new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -235,20 +234,66 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
-        Menu(menuDominio, menuMalla, menuTConect, menuMEF, menuDefinicion,menuEnsamblaje, menuContorno);
+        Menu(menuDominio, menuMalla, menuTConect/*, menuDefinicion,menuEnsamblaje, menuContorno*/);
+        MenuIn(menuMEF);
+        MenuIn1(menuDefinicion);
+        Menu2(menuEnsamblaje, menuContorno);
     }
 
-    private void Menu(MenuItem... menu) {
+    private void Menu(MenuItem menuDominio, MenuItem1 menuMalla, MenuItem2 menuTConect) {
+        menus.add(menuDominio);
+        menus.add(menuMalla);
+        menus.add(menuTConect);
+        ArrayList<MenuItem> subMenu = menuDominio.getSubMenu();
+        menus.revalidate();
+    }
+    
+    private void Menu2(MenuItem5 menuDefinicion,MenuItem6 menuContorno) {
+        menus.add(menuDefinicion);
+        menus.add(menuContorno);
+        ArrayList<MenuItem5> subMenu = menuDefinicion.getSubMenu();
+        menus.revalidate();
+    }
+    
+    private void MenuIn(MenuItem3... menu) {
         for (int i = 0; i < menu.length; i++) {
             menus.add(menu[i]);
-            ArrayList<MenuItem> subMenu = menu[i].getSubMenu();
-            for (MenuItem m : subMenu) {
-                Menu(m);
+            ArrayList<MenuItem3> subMenu = menu[i].getSubMenu();
+            for (MenuItem3 m : subMenu) {
+                MenuIn(m);
             }
         }
         menus.revalidate();
     }
-
+    
+    private void MenuIn1(MenuItem4... menu) {
+        for (int i = 0; i < menu.length; i++) {
+            menus.add(menu[i]);
+            ArrayList<MenuItem4> subMenu = menu[i].getSubMenu();
+            for (MenuItem4 m : subMenu) {
+                MenuIn1(m);
+            }
+        }
+        menus.revalidate();
+    }
+    /*
+    private void Menu(MenuItem... menu, menuItem2... menu2) {
+        for (int i = 0; i < menu2.length; i++) {
+            menus.add(menu[i]);
+            ArrayList<MenuItem2> subMenu2 = menu2[i].getSubMenu();
+            for (int j = 0; j < menu.length; j++) {
+                menus.add(menu[j]);
+                ArrayList<MenuItem> subMenu = menu[i].getSubMenu();
+                for (MenuItem m : subMenu) {
+                    Menu(m);
+            }
+                
+            }
+            menus.revalidate();
+        }
+        menus.revalidate();
+    }
+*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -362,9 +407,5 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menus;
     // End of variables declaration//GEN-END:variables
-
-    private void setIcon() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../resources/icon/icon.png")));
-    }
 
 }

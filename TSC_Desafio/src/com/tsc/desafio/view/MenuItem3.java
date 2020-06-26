@@ -14,58 +14,20 @@ import javax.swing.Icon;
  *
  * @author vegad
  */
-public class MenuItem extends javax.swing.JPanel {
+public class MenuItem3 extends javax.swing.JPanel {
 
-    public ArrayList<MenuItem> getSubMenu(){
+    public ArrayList<MenuItem3> getSubMenu(){
         return subMenu;
     }
 
     /**
      * Creates new form MenuItem
      */
-    private final ArrayList<MenuItem> subMenu = new ArrayList<>();
+    private final ArrayList<MenuItem3> subMenu = new ArrayList<>();
     private ActionListener actionListener;
     
-    public MenuItem(Icon icon, String menuName, ActionListener actionListener, MenuItem... subMenu) {
+    public MenuItem3(String menuName, ActionListener actionListener,MenuItem3... subMenu) {
         initComponents();
-        theIcon.setIcon(icon);
-        LabelName.setText(menuName);
-        
-        if(actionListener!=null){
-            this.actionListener=actionListener;
-        }
-        
-        this.setSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
-        for (int i = 0; i < subMenu.length; i++) {
-            this.subMenu.add(subMenu[i]);
-            subMenu[i].setVisible(false);
-            
-        }
-    }
-    
-    public MenuItem(String menuName, ActionListener actionListener,MenuItem... subMenu) {
-        initComponents();
-        LabelName.setText(menuName);
-        
-        if(actionListener!=null){
-            this.actionListener=actionListener;
-        }
-        
-        this.setSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMaximumSize(new Dimension(Integer.MAX_VALUE,45));
-        this.setMinimumSize(new Dimension(Integer.MAX_VALUE,45));
-        for (int i = 0; i < subMenu.length; i++) {
-            this.subMenu.add(subMenu[i]);
-            subMenu[i].setVisible(false);
-            
-        }
-    }
-    
-    public MenuItem(Icon icon, String menuName, MenuItem... subMenu) {
-        initComponents();
-        theIcon.setIcon(icon);
         LabelName.setText(menuName);
         
         if(actionListener!=null){
@@ -111,7 +73,7 @@ public class MenuItem extends javax.swing.JPanel {
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
         jSeparator1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        theIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tsc/desafio/resources/iconmenu/cube.png"))); // NOI18N
+        theIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tsc/desafio/resources/iconmenu/mef.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
