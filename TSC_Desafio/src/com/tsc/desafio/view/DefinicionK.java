@@ -6,21 +6,8 @@
 package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.Butt;
-import com.tsc.desafio.panel.Contorno;
-import com.tsc.desafio.panel.DEF;
 import com.tsc.desafio.panel.DEFK;
 import com.tsc.desafio.panel.DEFK1;
-import com.tsc.desafio.panel.DEFQ;
-import com.tsc.desafio.panel.DEFQ1;
-import com.tsc.desafio.panel.DEFQ2;
-import com.tsc.desafio.panel.DEFQ3;
-import com.tsc.desafio.panel.DEFR;
-import com.tsc.desafio.panel.DEFR1;
-import com.tsc.desafio.panel.DEFR2;
-import com.tsc.desafio.panel.DEFR3;
-import com.tsc.desafio.panel.DefDominio;
-import com.tsc.desafio.panel.Malla;
-import com.tsc.desafio.panel.Paso1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
