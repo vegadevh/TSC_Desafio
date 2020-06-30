@@ -7,8 +7,8 @@ package com.tsc.desafio.view;
 
 import com.tsc.desafio.panel.ApplyConditions;
 import com.tsc.desafio.panel.Butt;
-import com.tsc.desafio.panel.ElementsI;
-import com.tsc.desafio.panel.ElementsP;
+import com.tsc.desafio.panel.E13;
+import com.tsc.desafio.panel.E46;
 import com.tsc.desafio.panel.Ensamblaje;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -101,7 +101,7 @@ public class Assambly extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new ElementsI());
+                PanelBody.add(new E13());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
@@ -111,7 +111,7 @@ public class Assambly extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 PanelBody.removeAll();
-                PanelBody.add(new ElementsP());
+                PanelBody.add(new E46());
                 PanelBody.repaint();
                 PanelBody.revalidate();
             }
