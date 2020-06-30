@@ -49,9 +49,9 @@ public class ElementsP extends javax.swing.JPanel {
                         .addGap(64, 64, 64)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
+                        .addGap(149, 149, 149)
                         .addComponent(jLabel1)))
-                .addGap(715, 715, 715))
+                .addGap(813, 813, 813))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
